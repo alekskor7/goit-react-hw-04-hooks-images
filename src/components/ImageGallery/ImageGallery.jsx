@@ -5,11 +5,11 @@ import Modal from '../Modal/Modal';
 import Style from "./ImageGallery.module.css";
 
 export default function ImageGallery({ items }) {
-  const [imageIndex, setImageIndex] = useState(null);
+  const [imageId, setImageId] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  function handleClick(index) {
-    setImageIndex(index);
+  function handleClick(id) {
+    setImageId(id);
     setShowModal(true);
   }
 
@@ -20,12 +20,12 @@ export default function ImageGallery({ items }) {
   return (
     <>
       <ul className={Style.ImageGallery}>
-        {items.map((item, index) => (
+        {items.map((item, id) => (
           <ImageGalleryItem
-            key={index}
+            key={id}
             item={item}
             onClick={() => {
-              handleClick(index);
+              handleClick(id);
             }}
           />
         ))}
@@ -33,8 +33,8 @@ export default function ImageGallery({ items }) {
       {showModal && (
         <Modal onClose={toggleModal}>
           <img
-            src={items[imageIndex].largeImageURL}
-            alt={items[imageIndex].tags}
+            src={items[imageId].largeImageURL}
+            alt={items[imageId].tags}
           />
         </Modal>
       )}

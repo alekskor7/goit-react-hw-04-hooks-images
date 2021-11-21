@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Loader from 'react-loader-spinner';
 import Searchbar from './components/Searchbar/Searchbar';
 import ImageGallery from './components/ImageGallery/ImageGallery';
-import { fetchImagesByQuery, IMAGES_PER_PAGE } from './components/Api/Api';
+import { fetchImagesByQuery, IMAGES_PER_PAGE } from './Api/Api';
 import Button from './components/Button/Button';
 import Style from "./App.module.css";
 
